@@ -6,7 +6,6 @@ from newspaper import Article
 
 # conn = psycopg2.connect(host="localhost", dbname="postgres", user="postgres", password="dfgtzu88", port=5432)
 # cur = conn.cursor()
-
 # def delete_table():
 #     cur.execute("""DROP TABLE articles
 #                 """)
