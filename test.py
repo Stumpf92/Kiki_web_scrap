@@ -1,5 +1,6 @@
 import psycopg2
 import re
+import datetime
 from newspaper import Article
 #pgadmin 4
 
@@ -58,9 +59,9 @@ def get_external_id(url):
     first = re.findall("(\d+)", url)[0]
     return first
 
-def get_author(article):
-    #return str(article.authors[0])
-    pass
+# def get_author(article):
+#     #return str(article.authors[0])
+#     pass
 
 def get_release_date(url):
     pass
@@ -72,8 +73,11 @@ def get_tags(url):
     pass
 def get_significance(url):
     pass
-def get_time(url):
-    pass
+
+
+def get_time():
+    now = datetime.datetime.now
+    return now
 
 
 
@@ -90,11 +94,23 @@ with open("final_links.txt", "r") as file:
 
 # create an article in table for each link in the list:
 for url in list_of_links[0:5]:
-    article = Article(str(url))
-    article.download()
-    article.parse()
+    # article = Article(str(url))
+    # article.download()
+    # article.parse()
 
-    create_article(get_id(),get_source(),get_url(url),get_external_naming(url),get_external_id(url),get_author(article),get_release_date(url),get_title(url),get_text(url),get_tags(url),get_significance(url),get_time(url))
+    create_article(get_id(),
+                   get_source(),
+                   get_url(url),
+                   get_external_naming(url),
+                   get_external_id(url),
+                   #get_author(article),
+                   get_release_date(url),
+                   get_title(url),
+                   get_text(url),
+                   get_tags(url),
+                   get_significance(url),
+                   get_time()
+                   )
 
 
 # conn.commit()
