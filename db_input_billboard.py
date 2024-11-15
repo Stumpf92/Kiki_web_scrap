@@ -78,8 +78,8 @@ def create_id():
 
 
 list_of_fails = []
-counter = 40000
-step_size = 40000
+counter = 100000
+step_size = 10000
 
 # load the list of links:
 list_of_links = []
