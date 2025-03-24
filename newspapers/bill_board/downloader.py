@@ -26,7 +26,7 @@ columns = [['article_id','INT'],
 
 
 # extrahiere die neueste Liste-TxtDatei des jeweiligen Providers
-liste_aller_datein = os.listdir("bill_board/")
+liste_aller_datein = os.listdir("newspapers/bill_board/")
 pattern = r"\d+.*txt"
 liste_aller_link_txtdatein = []
 for _ in liste_aller_datein:
@@ -36,7 +36,7 @@ for _ in liste_aller_datein:
 neueste_link_txtdatei = liste_aller_link_txtdatein[-1]
 
 # extrahiere die Liste aller potenzieller neuen Links aus neuesten Liste-TxtDatei
-with open("bill_board/"+neueste_link_txtdatei, 'r',  encoding="utf-8") as f:
+with open("newspapers/bill_board/"+neueste_link_txtdatei, 'r',  encoding="utf-8") as f:
     temp = f.readlines()
 
 liste_potenzieller_neuer_links = []

@@ -127,8 +127,4 @@ HTML(string=complete_html).write_pdf(f"search_reports/{jetzt}_output.pdf")
 print("PDF erfolgreich erstellt!")
 
 
-
-
-
-
 db.disconnect()

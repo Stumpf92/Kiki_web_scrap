@@ -12,7 +12,6 @@ html = website.get_html()
 
 pattern= "<loc>(.*?)</loc>"
 list_of_all_sitemaps = re.findall(pattern, html)
-print(list_of_all_sitemaps)
 
 list_of_all_news_links_endings = []
 for _ in list_of_all_sitemaps:
@@ -23,7 +22,7 @@ for _ in list_of_all_sitemaps:
 
 now = time.time()
 
-a = open("bill_board/"+str(round(now))+'_links.txt', 'w',  encoding="utf-8")
+a = open(f'newspapers/bill_board/{round(now)}_links.txt', 'w',  encoding="utf-8")
 counter = 0
 for per_link in list_of_all_news_links_endings:
     for _ in per_link:
