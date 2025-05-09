@@ -126,6 +126,7 @@ for spalte in suchrelevante_spalten:
     mask = mask | dataframe.apply(lambda row: check_blacklist(row[spalte], whitelist_matches[row.name]), axis=1)
 
 filtered = dataframe[mask]
+filtered = filtered.sort_values(by='release_date', ascending=False)
 print("Datenbank nach Suchwörtern durchsucht")
 print(filtered.shape)
 
